@@ -1,16 +1,23 @@
 window.addEventListener("DOMContentLoaded", () => {
   const screens = new Map(
-    ["main-menu", "instructions", "credits", "game-content", "game-lose", "game-win", "game-win-but"].map((id) => [
-      id,
-      document.getElementById(id),
-    ])
+    [
+      "main-menu",
+      "instructions",
+      "credits",
+      "game-content",
+      "game-lose",
+      "game-win",
+      "game-win-but",
+    ].map((id) => [id, document.getElementById(id)]),
   );
 
   const playButton = document.getElementById("play-button");
   const instructionsButtons = document.querySelectorAll(".instructions-button");
   const creditsButtons = document.querySelectorAll(".credits-button");
   const mainScreenButtons = document.querySelectorAll(".main-screen-button");
-  const inGameMainMenuButton = document.getElementById("main-screen-button-from-game");
+  const inGameMainMenuButton = document.getElementById(
+    "main-screen-button-from-game",
+  );
   const restartButtons = document.querySelectorAll(".restart-button");
   const backgroundMusic = document.getElementById("background-music");
   const playPauseButton = document.getElementById("play-pause-button");

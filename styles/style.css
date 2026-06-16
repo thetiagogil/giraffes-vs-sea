@@ -108,8 +108,12 @@ input[type="number"]::-webkit-outer-spin-button {
     linear-gradient(rgba(255, 255, 255, 0.03), rgba(6, 59, 89, 0.08)),
     url("../img/ocean.png");
   background-repeat: no-repeat, repeat-x;
-  background-position: center, 0 center;
-  background-size: 100% 100%, auto 100%;
+  background-position:
+    center,
+    0 center;
+  background-size:
+    100% 100%,
+    auto 100%;
   animation: ocean-drift 10s linear infinite;
 }
 
@@ -123,11 +127,15 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @keyframes ocean-drift {
   from {
-    background-position: center, 0 center;
+    background-position:
+      center,
+      0 center;
   }
 
   to {
-    background-position: center, 960px center;
+    background-position:
+      center,
+      960px center;
   }
 }
 
@@ -267,7 +275,10 @@ h1 {
   width: 100%;
   padding: clamp(10px, 1.2vw, 16px);
   display: grid;
-  grid-template-columns: minmax(230px, 1fr) minmax(320px, 440px) minmax(130px, 1fr);
+  grid-template-columns: minmax(230px, 1fr) minmax(320px, 440px) minmax(
+      130px,
+      1fr
+    );
   align-items: start;
   gap: clamp(12px, 1.4vw, 22px);
   pointer-events: none;
@@ -462,12 +473,32 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: -1;
-   background:
-    radial-gradient(circle at 28% 34%, rgba(201, 31, 31, 0.8) 0 9%, transparent 10%),
-    radial-gradient(circle at 70% 26%, rgba(201, 31, 31, 0.7) 0 7%, transparent 8%),
-    radial-gradient(circle at 58% 74%, rgba(201, 31, 31, 0.6) 0 8%, transparent 9%),
-    radial-gradient(circle at 44% 48%, rgba(255, 255, 255, 0.5) 0 12%, transparent 13%),
-    radial-gradient(circle at center, rgba(201, 31, 31, 0.4) 0 44%, transparent 46%);
+  background:
+    radial-gradient(
+      circle at 28% 34%,
+      rgba(201, 31, 31, 0.8) 0 9%,
+      transparent 10%
+    ),
+    radial-gradient(
+      circle at 70% 26%,
+      rgba(201, 31, 31, 0.7) 0 7%,
+      transparent 8%
+    ),
+    radial-gradient(
+      circle at 58% 74%,
+      rgba(201, 31, 31, 0.6) 0 8%,
+      transparent 9%
+    ),
+    radial-gradient(
+      circle at 44% 48%,
+      rgba(255, 255, 255, 0.5) 0 12%,
+      transparent 13%
+    ),
+    radial-gradient(
+      circle at center,
+      rgba(201, 31, 31, 0.4) 0 44%,
+      transparent 46%
+    );
   clip-path: polygon(
     50% 0,
     60% 26%,

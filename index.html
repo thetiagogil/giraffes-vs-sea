@@ -1,165 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Giraffes vs Sea</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <title>Giraffes vs Sea</title>
-</head>
+  <body>
+    <audio id="background-music" loop>
+      <source src="./music/one-piece.mp3" type="audio/mpeg" />
+    </audio>
 
-<body>
-  <audio id="background-music" loop>
-    <source src="./music/one-piece.mp3" type="audio/mpeg" />
-  </audio>
-
-  <main class="app-shell">
-    <section id="main-menu" class="screen screen--menu" aria-labelledby="main-title">
-      <div class="screen__topbar">
-        <div id="audio-controls" class="audio-controls" aria-label="Music controls">
-          <button id="play-pause-button" type="button">Play Music</button>
-          <label class="volume-control" for="volume-control">
-            <span>Volume</span>
-            <input type="range" id="volume-control" min="0" max="1" step="0.01" value="0.35" />
-          </label>
-        </div>
-      </div>
-
-      <div class="menu-copy">
-        <h1 id="main-title">GIRAFFES vs SEA</h1>
-        <p class="lede">
-          Help the crew defend the ship from sea enemies by solving math before they reach the deck.
-        </p>
-      </div>
-
-      <nav class="button-stack" aria-label="Main menu">
-        <button id="play-button" type="button">Play</button>
-        <button class="instructions-button" type="button">Instructions</button>
-        <button class="credits-button" type="button">Credits</button>
-      </nav>
-
-      <img id="marvel-char" src="./img/marvel.png" alt="" aria-hidden="true" />
-      <footer class="signature">Game by: Tiago Gil, 2023</footer>
-    </section>
-
-    <section id="instructions" class="screen" aria-labelledby="instructions-title" hidden>
-      <div class="menu-copy">
-        <h1 id="instructions-title">Instructions</h1>
-      </div>
-
-      <div class="text-panel">
-        <p>
-          Type the correct result and submit it to scare away any active sea enemy. More than one enemy can be on
-          screen, and your answer can defeat whichever enemy matches it.
-        </p>
-        <p>
-          The ship starts with <strong>100 HP</strong>. If an enemy reaches the ship, it deals damage and leaves the
-          field. Keep the ship above 0 HP until every enemy is gone.
-        </p>
-        <p>
-          Faster enemies have simpler problems. Slower enemies hit harder and bring bigger numbers.
-        </p>
-      </div>
-
-      <nav class="button-stack" aria-label="Instructions navigation">
-        <button class="main-screen-button" type="button">Main Menu</button>
-      </nav>
-
-      <footer class="signature">Game by: Tiago Gil, 2023</footer>
-    </section>
-
-    <section id="credits" class="screen" aria-labelledby="credits-title" hidden>
-      <div class="menu-copy">
-        <h1 id="credits-title">GIRAFFES vs SEA</h1>
-      </div>
-
-      <div class="text-panel text-panel--compact">
-        <p>This is my first JavaScript game. Thank you for playing.</p>
-      </div>
-
-      <nav class="button-stack" aria-label="Credits navigation">
-        <button class="main-screen-button" type="button">Main Menu</button>
-      </nav>
-
-      <footer class="signature">Game by: Tiago Gil, 2023</footer>
-    </section>
-
-    <section id="game-content" class="screen screen--game" aria-labelledby="game-title" hidden>
-      <header class="game-topbar">
-        <div class="game-stats">
-          <div>
-            <p class="hud-label">Ship HP</p>
-            <p class="hp-meter"><span id="hp">100</span> / 100</p>
-          </div>
-          <div>
-            <p class="hud-label">Threats Cleared</p>
-            <p id="wave-status" class="hud-value">0 / 4</p>
+    <main class="app-shell">
+      <section
+        id="main-menu"
+        class="screen screen--menu"
+        aria-labelledby="main-title"
+      >
+        <div class="screen__topbar">
+          <div
+            id="audio-controls"
+            class="audio-controls"
+            aria-label="Music controls"
+          >
+            <button id="play-pause-button" type="button">Play Music</button>
+            <label class="volume-control" for="volume-control">
+              <span>Volume</span>
+              <input
+                type="range"
+                id="volume-control"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.35"
+              />
+            </label>
           </div>
         </div>
 
-        <section class="command-panel" aria-label="Math command panel">
-          <form id="answer-form" class="answer-form" autocomplete="off">
-            <label for="user-answer">Answer</label>
-            <div class="answer-row">
-              <input id="user-answer" type="number" inputmode="numeric" placeholder="value" />
-              <button type="submit">Fire</button>
+        <div class="menu-copy">
+          <h1 id="main-title">GIRAFFES vs SEA</h1>
+          <p class="lede">
+            Help the crew defend the ship from sea enemies by solving math
+            before they reach the deck.
+          </p>
+        </div>
+
+        <nav class="button-stack" aria-label="Main menu">
+          <button id="play-button" type="button">Play</button>
+          <button class="instructions-button" type="button">
+            Instructions
+          </button>
+          <button class="credits-button" type="button">Credits</button>
+        </nav>
+
+        <img
+          id="marvel-char"
+          src="./img/marvel.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <footer class="signature">Game by: Tiago Gil, 2023</footer>
+      </section>
+
+      <section
+        id="instructions"
+        class="screen"
+        aria-labelledby="instructions-title"
+        hidden
+      >
+        <div class="menu-copy">
+          <h1 id="instructions-title">Instructions</h1>
+        </div>
+
+        <div class="text-panel">
+          <p>
+            Type the correct result and submit it to scare away any active sea
+            enemy. More than one enemy can be on screen, and your answer can
+            defeat whichever enemy matches it.
+          </p>
+          <p>
+            The ship starts with <strong>100 HP</strong>. If an enemy reaches
+            the ship, it deals damage and leaves the field. Keep the ship above
+            0 HP until every enemy is gone.
+          </p>
+          <p>
+            Faster enemies have simpler problems. Slower enemies hit harder and
+            bring bigger numbers.
+          </p>
+        </div>
+
+        <nav class="button-stack" aria-label="Instructions navigation">
+          <button class="main-screen-button" type="button">Main Menu</button>
+        </nav>
+
+        <footer class="signature">Game by: Tiago Gil, 2023</footer>
+      </section>
+
+      <section
+        id="credits"
+        class="screen"
+        aria-labelledby="credits-title"
+        hidden
+      >
+        <div class="menu-copy">
+          <h1 id="credits-title">GIRAFFES vs SEA</h1>
+        </div>
+
+        <div class="text-panel text-panel--compact">
+          <p>This is my first JavaScript game. Thank you for playing.</p>
+        </div>
+
+        <nav class="button-stack" aria-label="Credits navigation">
+          <button class="main-screen-button" type="button">Main Menu</button>
+        </nav>
+
+        <footer class="signature">Game by: Tiago Gil, 2023</footer>
+      </section>
+
+      <section
+        id="game-content"
+        class="screen screen--game"
+        aria-labelledby="game-title"
+        hidden
+      >
+        <header class="game-topbar">
+          <div class="game-stats">
+            <div>
+              <p class="hud-label">Ship HP</p>
+              <p class="hp-meter"><span id="hp">100</span> / 100</p>
             </div>
-          </form>
-
-          <div class="problem-board">
-            <p class="hud-label">Active Problems</p>
-            <div id="active-problems" class="problem-list" aria-live="polite"></div>
+            <div>
+              <p class="hud-label">Threats Cleared</p>
+              <p id="wave-status" class="hud-value">0 / 4</p>
+            </div>
           </div>
-        </section>
 
-        <button id="main-screen-button-from-game" type="button">Main Menu</button>
-      </header>
+          <section class="command-panel" aria-label="Math command panel">
+            <form id="answer-form" class="answer-form" autocomplete="off">
+              <label for="user-answer">Answer</label>
+              <div class="answer-row">
+                <input
+                  id="user-answer"
+                  type="number"
+                  inputmode="numeric"
+                  placeholder="value"
+                />
+                <button type="submit">Fire</button>
+              </div>
+            </form>
 
-      <div id="playfield" class="playfield" role="img" aria-label="Ocean battle between the Going Giraffes ship and sea enemies">
-        <h1 id="game-title" class="visually-hidden">Giraffes vs Sea battle</h1>
-      </div>
-    </section>
+            <div class="problem-board">
+              <p class="hud-label">Active Problems</p>
+              <div
+                id="active-problems"
+                class="problem-list"
+                aria-live="polite"
+              ></div>
+            </div>
+          </section>
 
-    <section id="game-lose" class="screen result-screen" aria-labelledby="lose-title" hidden>
-      <div class="menu-copy">
-        <h1 id="lose-title">The ship has sunk.</h1>
-        <p class="lede">The crew needs sharper math next time.</p>
-      </div>
+          <button id="main-screen-button-from-game" type="button">
+            Main Menu
+          </button>
+        </header>
 
-      <nav class="button-stack" aria-label="Lose screen navigation">
-        <button class="restart-button" type="button">Main Menu</button>
-      </nav>
-    </section>
+        <div
+          id="playfield"
+          class="playfield"
+          role="img"
+          aria-label="Ocean battle between the Going Giraffes ship and sea enemies"
+        >
+          <h1 id="game-title" class="visually-hidden">
+            Giraffes vs Sea battle
+          </h1>
+        </div>
+      </section>
 
-    <section id="game-win" class="screen result-screen" aria-labelledby="win-title" hidden>
-      <div class="menu-copy">
-        <h1 id="win-title">The Going Giraffes crew is safe.</h1>
-        <p class="lede">No damage taken. Clean sailing.</p>
-      </div>
+      <section
+        id="game-lose"
+        class="screen result-screen"
+        aria-labelledby="lose-title"
+        hidden
+      >
+        <div class="menu-copy">
+          <h1 id="lose-title">The ship has sunk.</h1>
+          <p class="lede">The crew needs sharper math next time.</p>
+        </div>
 
-      <nav class="button-stack" aria-label="Win screen navigation">
-        <button class="restart-button" type="button">Main Menu</button>
-      </nav>
-    </section>
+        <nav class="button-stack" aria-label="Lose screen navigation">
+          <button class="restart-button" type="button">Main Menu</button>
+        </nav>
+      </section>
 
-    <section id="game-win-but" class="screen result-screen" aria-labelledby="damaged-win-title" hidden>
-      <div class="menu-copy">
-        <h1 id="damaged-win-title">The crew is safe, but the ship needs repairs.</h1>
-        <p class="lede">You survived the sea. Next run, protect every plank.</p>
-      </div>
+      <section
+        id="game-win"
+        class="screen result-screen"
+        aria-labelledby="win-title"
+        hidden
+      >
+        <div class="menu-copy">
+          <h1 id="win-title">The Going Giraffes crew is safe.</h1>
+          <p class="lede">No damage taken. Clean sailing.</p>
+        </div>
 
-      <nav class="button-stack" aria-label="Damaged win screen navigation">
-        <button class="restart-button" type="button">Main Menu</button>
-      </nav>
-    </section>
-  </main>
+        <nav class="button-stack" aria-label="Win screen navigation">
+          <button class="restart-button" type="button">Main Menu</button>
+        </nav>
+      </section>
 
-  <script type="text/javascript" src="./src/player.js"></script>
-  <script type="text/javascript" src="./src/enemy.js"></script>
-  <script type="text/javascript" src="./src/game.js"></script>
-  <script type="text/javascript" src="./src/script.js"></script>
-</body>
+      <section
+        id="game-win-but"
+        class="screen result-screen"
+        aria-labelledby="damaged-win-title"
+        hidden
+      >
+        <div class="menu-copy">
+          <h1 id="damaged-win-title">
+            The crew is safe, but the ship needs repairs.
+          </h1>
+          <p class="lede">
+            You survived the sea. Next run, protect every plank.
+          </p>
+        </div>
 
+        <nav class="button-stack" aria-label="Damaged win screen navigation">
+          <button class="restart-button" type="button">Main Menu</button>
+        </nav>
+      </section>
+    </main>
+
+    <script type="text/javascript" src="./src/player.js"></script>
+    <script type="text/javascript" src="./src/enemy.js"></script>
+    <script type="text/javascript" src="./src/game.js"></script>
+    <script type="text/javascript" src="./src/script.js"></script>
+  </body>
 </html>
